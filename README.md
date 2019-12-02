@@ -1,27 +1,30 @@
-# Explorador
+# Proyecto
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
+**Objetivo:** Practicar los conceptos aprendidos creando una aplicación usable realista.
 
-## Development server
+**20 horas** en 4 sesiones de 5 horas
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- 5 horas de práctica individual
 
-## Code scaffolding
+## Explorador de datos del Banco Mundial
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Desarrollar una aplicación web con Angular y estética Material Design que muestre datos básicos de los países consultando el api oficial del Banco Mundial.
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Características
 
-## Running unit tests
+- Trabajo individual
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Colaboración y ayuda entre el alumnado permitida.
 
-## Running end-to-end tests
+- Consulta de documentación online y al profesor permitida.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Libertad estética pero usando Material Design.
 
-## Further help
+### Guía
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+- [Estructura y funcionalidad esperadas](./estructura.md)
+
+- [Recursos](./recursos.md)
+
+- [Tareas evaluables](./tareas.md)
