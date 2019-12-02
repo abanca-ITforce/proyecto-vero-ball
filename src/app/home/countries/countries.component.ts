@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CountriesServiceService } from 'src/app/countries-service.service';
 
 @Component({
   selector: 'app-countries',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountriesComponent implements OnInit {
 
-  constructor() { }
+  countriesList$;
+
+  constructor(private countriesService: CountriesServiceService) {
+    this.countriesList$ = countriesService.getCountries$();
+  }
 
   ngOnInit() {
   }
