@@ -5,16 +5,14 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home/home.component';
 import { CountriesComponent } from './countries/countries.component';
 import { MatListModule } from '@angular/material/list';
-import { CountriesServiceService } from '../countries-service.service';
-
+import { CountryComponent } from './country/country.component';
 
 @NgModule({
-  declarations: [HomeComponent, CountriesComponent],
+  declarations: [HomeComponent, CountriesComponent, CountryComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,
     MatListModule
-
   ]
 })
 export class HomeModule { }

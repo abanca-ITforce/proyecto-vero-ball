@@ -13,7 +13,7 @@ export class CountriesServiceService {
 
   }
 
-  getCountries$(){
+  getCountries$() {
     return this.http.get<any[]>(this.url + this.apendix).pipe(map(data => (data[1])));
   }
 
