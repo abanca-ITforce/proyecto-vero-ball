@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CountriesRoutingModule } from './countries-routing.module';
-import { CountriesComponent } from './countries.component';
+import { CountriesComponent } from './countries/countries.component';
+
 
 
 @NgModule({
@@ -13,3 +14,4 @@ import { CountriesComponent } from './countries.component';
   ]
 })
 export class CountriesModule { }
+
