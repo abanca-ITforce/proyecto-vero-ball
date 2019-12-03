@@ -1,9 +1,0 @@
-<mat-list *ngIf="countriesList$ | async as countriesList; else empty">
-  <a mat-list-item [routerLink]="country.id" *ngFor="let country of countriesList" > {{ country.name }} </a>
-  <!-- <mat-list-item> Pepper </mat-list-item>
-  <mat-list-item> Salt </mat-list-item>
-  <mat-list-item> Paprika </mat-list-item> -->
-</mat-list>
-<ng-template #empty>
-  Cargando...
-</ng-template>
