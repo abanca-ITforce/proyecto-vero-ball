@@ -5,7 +5,7 @@ import { RegionsComponent } from './regions.component';
 
 const routes: Routes = [
   { path: '', component: RegionsComponent },
-  { path: ':regionId', loadChildren: () => import('./region/region.module').then(m => m.RegionModule) }
+  { path: ':regionCode', loadChildren: () => import('./region/region.module').then(m => m.RegionModule) }
 ];
 
 @NgModule({
