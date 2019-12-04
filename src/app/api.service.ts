@@ -38,4 +38,17 @@ export class ApiService {
     const url = this.endPoint + '?region=' + regionId + this.countryRegionFormat;
     return this.httpClient.get<any>(url).pipe(map(result => result[1]));
   }
+
+  getIncomingLevels(){
+    // const url = 'https://api.worldbank.org/v2/incomeLevel/?format=json';
+    return [
+      {'id':'HIC','iso2code':'XD','value':'High income'},
+      {'id':'INX','iso2code':'XY','value':'Not classified'},
+      {'id':'LIC','iso2code':'XM','value':'Low income'},
+      {'id':'LMC','iso2code':'XN','value':'Lower middle income'},
+      {'id':'LMY','iso2code':'XO','value':'Low & middle income'},
+      {'id':'MIC','iso2code':'XP','value':'Middle income'},
+      {'id':'UMC','iso2code':'XT','value':'Upper middle income'}
+    ];
+  }
 }

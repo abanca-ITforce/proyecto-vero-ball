@@ -1,0 +1,15 @@
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+  <h4>Incoming Level</h4>
+  <mat-form-field>
+    <mat-label>Level</mat-label>
+    <mat-select formControlName="level">
+      <mat-option
+
+        *ngFor="let level of levels"
+        [value]="level.id">
+        {{ level.value }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
