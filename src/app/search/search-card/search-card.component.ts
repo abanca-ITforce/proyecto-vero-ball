@@ -10,7 +10,7 @@ export class SearchCardComponent implements OnInit {
 
   @Input() incomingLevels: any[];
 
-  @Output() selected: EventEmitter<any>;
+  @Output() selected = new EventEmitter<any>();
 
   dataForm: FormGroup;
   constructor(private fb: FormBuilder) { }

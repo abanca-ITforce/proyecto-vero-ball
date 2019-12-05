@@ -2,15 +2,13 @@
   <h4>Filter countries</h4>
   <mat-form-field>
     <mat-label>Incoming Level</mat-label>
-    <mat-select formControlName="level">
+    <mat-select formControlName="incomingLevel">
       <mat-option
-
-        *ngFor="let level of levels"
-        [value]="level.id">
-        {{ level.value }}
+        *ngFor="let incomingLevel of incomingLevels"
+        [value]="incomingLevel.id">
+        {{ incomingLevel.value }}
       </mat-option>
     </mat-select>
-
   </mat-form-field>
   <mat-card-actions>
     <button

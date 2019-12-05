@@ -1,11 +1,7 @@
 <app-search-card
   [incomingLevels]="incomingLevels$"
-  (selected)="onSelect($event) | async">
+  (selected)="onSelect($event) ">
 </app-search-card>
 <app-countries-list
-  [countries]="countries$ | async; else #empty"
->
+  [countries]="countries$ | async">
 </app-countries-list>
-<ng-template #empty>
-Loading...
-</ng-template>

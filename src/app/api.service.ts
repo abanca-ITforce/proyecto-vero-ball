@@ -62,9 +62,10 @@ export class ApiService {
 
   getCountriesByFilter(selected: any){
     let url = this.incomingEndPoint + this.incomingFormat;
-    if(selected.incomingLevel){
+    if (selected.incomingLevel){
       url += '&incomeLevel=' + selected.incomingLevel;
     }
+    // console.log({url});
     return this.httpClient.get<any[]>(url).pipe(map(res => res[1]));
 
   }

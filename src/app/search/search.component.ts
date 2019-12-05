@@ -16,11 +16,10 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.incomingLevels$ = this.api.getIncomingLevels$();
-
+    console.log(this.incomingLevels$);
   }
 
   onSelect(selected) {
-    // this.api.putIncomingLevel$(selected).subscribe();
     this.countries$ = this.api.getCountriesByFilter(selected);
   }
 
