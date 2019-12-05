@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search-card',
@@ -7,22 +7,23 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./search-card.component.css']
 })
 export class SearchCardComponent implements OnInit {
-  dataForm = this.fb.group({
-    level: [null, []]
-  })
 
-  @Input() levels;
+  @Input() incomingLevels: any[];
 
   @Output() selected: EventEmitter<any>;
 
+  dataForm: FormGroup;
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.dataForm = this.fb.group({
+      incomingLevel: ''
+    });
   }
 
   onSubmit() {
-    // this.post.emit(this.taskForm.value);
-
+    const selected = this.dataForm.value;
+    this.selected.emit(selected);
   }
 
 }

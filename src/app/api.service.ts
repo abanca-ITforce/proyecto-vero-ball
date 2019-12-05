@@ -12,6 +12,8 @@ export class ApiService {
   private regionEndPoint = 'https://api.worldbank.org/v2/region/';
   private regionFormat = '?per_page=1000&format=json';
   private countryRegionFormat = '&per_page=1000&format=json';
+  private incomingEndPoint = 'https://api.worldbank.org/v2/country?incomeLevel=';
+  private incomingFormat = '&per_page=1000&format=json';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -39,16 +41,31 @@ export class ApiService {
     return this.httpClient.get<any>(url).pipe(map(result => result[1]));
   }
 
-  getIncomingLevels(){
-    // const url = 'https://api.worldbank.org/v2/incomeLevel/?format=json';
-    return [
-      {'id':'HIC','iso2code':'XD','value':'High income'},
-      {'id':'INX','iso2code':'XY','value':'Not classified'},
-      {'id':'LIC','iso2code':'XM','value':'Low income'},
-      {'id':'LMC','iso2code':'XN','value':'Lower middle income'},
-      {'id':'LMY','iso2code':'XO','value':'Low & middle income'},
-      {'id':'MIC','iso2code':'XP','value':'Middle income'},
-      {'id':'UMC','iso2code':'XT','value':'Upper middle income'}
-    ];
+  getIncomingLevels$(){
+    const url = 'https://api.worldbank.org/v2/incomeLevel/?format=json';
+    // return [
+    //   {'id':'HIC','iso2code':'XD','value':'High income'},
+    //   {'id':'INX','iso2code':'XY','value':'Not classified'},
+    //   {'id':'LIC','iso2code':'XM','value':'Low income'},
+    //   {'id':'LMC','iso2code':'XN','value':'Lower middle income'},
+    //   {'id':'LMY','iso2code':'XO','value':'Low & middle income'},
+    //   {'id':'MIC','iso2code':'XP','value':'Middle income'},
+    //   {'id':'UMC','iso2code':'XT','value':'Upper middle income'}
+    // ];
+    return this.httpClient.get<any[]>(url).pipe(map(res => res[1]));
+  }
+
+  putIncomingLevel$(incomingLevel) {
+    const url = this.incomingEndPoint + incomingLevel + this.incomingEndPoint;
+    return this.httpClient.put(url, incomingLevel);
+  }
+
+  getCountriesByFilter(selected: any){
+    let url = this.incomingEndPoint + this.incomingFormat;
+    if(selected.incomingLevel){
+      url += '&incomeLevel=' + selected.incomingLevel;
+    }
+    return this.httpClient.get<any[]>(url).pipe(map(res => res[1]));
+
   }
 }

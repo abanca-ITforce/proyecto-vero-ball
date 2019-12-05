@@ -1,10 +1,11 @@
-<app-search-card [levels]="incomingLevels"></app-search-card>
-<!-- <app-countries-list
-*ngIf="countries$ | async as countries; else empty"
-[countries]="countries"
+<app-search-card
+  [incomingLevels]="incomingLevels$"
+  (selected)="onSelect($event) | async">
+</app-search-card>
+<app-countries-list
+  [countries]="countries$ | async; else #empty"
 >
 </app-countries-list>
 <ng-template #empty>
 Loading...
-</ng-template> -->
-
+</ng-template>

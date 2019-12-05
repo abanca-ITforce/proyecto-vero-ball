@@ -1,7 +1,7 @@
-<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
-  <h4>Incoming Level</h4>
+<form [formGroup]="dataForm" (click)="onSubmit()">
+  <h4>Filter countries</h4>
   <mat-form-field>
-    <mat-label>Level</mat-label>
+    <mat-label>Incoming Level</mat-label>
     <mat-select formControlName="level">
       <mat-option
 
@@ -10,6 +10,15 @@
         {{ level.value }}
       </mat-option>
     </mat-select>
+
   </mat-form-field>
+  <mat-card-actions>
+    <button
+      mat-raised-button color="primary"
+      type="button"
+      (click)="onSubmit()">
+      Enviar
+  </button>
+  </mat-card-actions>
 </form>
 
